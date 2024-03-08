@@ -7,7 +7,7 @@ Big O Notation in Data Structure describes the upper bound of an algorithm's run
 
 ## O( 1 )
 
-```bash
+```python
 # Array
 nums = [1, 2, 3]
 nums.append(4)    # push to end
@@ -27,7 +27,7 @@ hashMap.pop("key")      # remove
 
 ## O( n )
 
-```bash
+```python
 
 nums = [1, 2, 3]
 sum(nums)           # sum of array
@@ -47,7 +47,7 @@ heapq.heapify(nums) # build heap
 
 ## O( n^2 )
 
-```bash
+```python
 # Traverse a square grid
 nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for i in range(len(nums)):
@@ -65,7 +65,7 @@ for i in range(len(nums)):
 
 ## O( n * m )
 
-```bash
+```python
 # Get every pair of elements from two arrays
 nums1, nums2 = [1, 2, 3], [4, 5]
 for i in range(len(nums1)):
@@ -80,7 +80,7 @@ for i in range(len(nums)):
 ```
 
 ## O( n^3 )
-```bash
+```python
 # Get every triplet of elements in array
 nums = [1, 2, 3]
 for i in range(len(nums)):
@@ -91,7 +91,7 @@ for i in range(len(nums)):
 
 ## O( logn )
 
-```bash
+```python
 # Binary search
 nums = [1, 2, 3, 4, 5]
 target = 6
@@ -136,7 +136,7 @@ while nums:
 
 ## O( 2^n )
 
-```bash
+```python
 # Recursion, tree height n, two branches
 def recursion(i, nums):
     if i == len(nums):
@@ -147,7 +147,7 @@ def recursion(i, nums):
 
 ## O( c^n )
 
-```bash
+```python
 # c branches, where c is sometimes n.
 def recursion(i, nums, c):
     if i == len(nums):
@@ -159,7 +159,7 @@ def recursion(i, nums, c):
 
 ## O( sqrt(n) )
 
-```bash
+```python
 # Get all factors of n
 import math
 n = 12
@@ -172,7 +172,7 @@ for i in range(1, int(math.sqrt(n)) + 1):
 
 ## O( n! )
 
-```bash
+```python
 # Permutations
 # Travelling Salesman Problem
 ```
