@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Big O Notation</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="markdown-body">
+            <h1 id="big-o">Big-O</h1>
+            <p>
+                Big O Notation is a tool used to describe the time complexity of
+                algorithms. It calculates the time taken to run an algorithm as
+                the input grows. In other words, it calculates the worst-case
+                time complexity of an algorithm.
+            </p>
+            <p>
+                Big O Notation in Data Structure describes the upper bound of an
+                algorithm&#39;s runtime. It calculates the time and amount of
+                memory needed to execute the algorithm for an input value.
+            </p>
+            <h2 id="o-1-">O( 1 )</h2>
+            <pre><code class="language-python"># Array
+nums = [1, 2, 3]
+nums.append(4)    # push to end
+nums.pop()        # pop from end
+nums[0]           # lookup
+nums[1]
+nums[2]
+
+
+# HashMap / Set
+hashMap = {}
+hashMap[&quot;key&quot;] = 10     # insert
+print(&quot;key&quot; in hashMap) # lookup
+print(hashMap[&quot;key&quot;])   # lookup
+hashMap.pop(&quot;key&quot;)      # remove
+</code></pre>
+            <h2 id="o-n-">O( n )</h2>
+            <pre><code class="language-python">
+nums = [1, 2, 3]
+sum(nums)           # sum of array
+for n in nums:      # looping
+    print(n)
+
+nums.insert(1, 100) # insert middle
+nums.remove(100)    # remove middle
+print(100 in nums)  # search
+
+import heapq
+heapq.heapify(nums) # build heap
+
+# sometimes even nested loops can be O(n)
+# (e.g. monotonic stack or sliding window)
+</code></pre>
+            <h2 id="o-n2-">O( n^2 )</h2>
+            <pre><code class="language-python"># Traverse a square grid
+nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for i in range(len(nums)):
+    for j in range(len(nums[i])): 
+        print(nums[i][j])
+
+# Get every pair of elements in array
+nums = [1, 2, 3]
+for i in range(len(nums)):
+    for j in range(i + 1, len(nums)):
+        print(nums[i], nums[j])
+
+# Insertion sort (insert in middle n times -&gt; n^2)
+</code></pre>
+            <h2 id="o-n--m-">O( n * m )</h2>
+            <pre><code class="language-python"># Get every pair of elements from two arrays
+nums1, nums2 = [1, 2, 3], [4, 5]
+for i in range(len(nums1)):
+    for j in range(len(nums2)):
+        print(nums1[i], nums2[j])
+
+# Traverse rectangle grid
+nums = [[1, 2, 3], [4, 5, 6]]
+for i in range(len(nums)):
+    for j in range(len(nums[i])):
+        print(nums[i][j])
+</code></pre>
+            <h2 id="o-n3-">O( n^3 )</h2>
+            <pre><code class="language-python"># Get every triplet of elements in array
+nums = [1, 2, 3]
+for i in range(len(nums)):
+    for j in range(i + 1, len(nums)):
+        for k in range(j + 1, len(nums)):
+            print(nums[i], nums[j], nums[k])
+</code></pre>
+            <h2 id="o-logn-">O( logn )</h2>
+            <pre><code class="language-python"># Binary search
+nums = [1, 2, 3, 4, 5]
+target = 6
+l, r = 0, len(nums) - 1
+while l &lt;= r:
+    m = (l + r) // 2
+    if target &lt; nums[m]:
+        r = m - 1
+    elif target &gt; nums[m]:
+        l = m + 1
+    else:
+        print(m)
+        break
+
+# Binary Search on BST
+def search(root, target):
+    if not root:
+        return False
+    if target &lt; root.val:
+        return search(root.left, target)
+    elif target &gt; root.val:
+        return search(root.right, target)
+    else: 
+        return True
+
+# Heap Push and Pop
+import heapq
+minHeap = []
+heapq.heappush(minHeap, 5)
+heapq.heappop(minHeap)
+O( nlogn )
+
+# HeapSort
+import heapq
+nums = [1, 2, 3, 4, 5]
+heapq.heapify(nums)     # O(n)
+while nums:
+    heapq.heappop(nums) # O(logn)
+
+# MergeSort (and most built-in sorting functions)
+</code></pre>
+            <h2 id="o-2n-">O( 2^n )</h2>
+            <pre><code class="language-python"># Recursion, tree height n, two branches
+def recursion(i, nums):
+    if i == len(nums):
+        return 0
+    branch1 = recursion(i + 1, nums)
+    branch2 = recursion(i + 2, nums)
+</code></pre>
+            <h2 id="o-cn-">O( c^n )</h2>
+            <pre><code class="language-python"># c branches, where c is sometimes n.
+def recursion(i, nums, c):
+    if i == len(nums):
+        return 0
+    
+    for j in range(i, i + c):
+        branch = recursion(j + 1, nums)
+</code></pre>
+            <h2 id="o-sqrtn-">O( sqrt(n) )</h2>
+            <pre><code class="language-python"># Get all factors of n
+import math
+n = 12
+factors = set()
+for i in range(1, int(math.sqrt(n)) + 1):
+    if n % i == 0:
+        factors.add(i)
+        factors.add(n // i)
+</code></pre>
+            <h2 id="o-n--1">O( n! )</h2>
+            <pre><code class="language-python"># Permutations
+# Travelling Salesman Problem
+</code></pre>
+        </div>
+    </body>
+</html>

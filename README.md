@@ -1,9 +1,8 @@
 # Big-O
-Big O Notation is a tool used to describe the time complexity of algorithms. It calculates the time taken to run an algorithm as the input grows. In other words, it calculates the worst-case time complexity of an algorithm. 
 
-Big O Notation in Data Structure describes the upper bound of an algorithm's runtime. It calculates the time and amount of memory needed to execute the algorithm for an input value. 
+Big O Notation is a tool used to describe the time complexity of algorithms. It calculates the time taken to run an algorithm as the input grows. In other words, it calculates the worst-case time complexity of an algorithm.
 
-
+Big O Notation in Data Structure describes the upper bound of an algorithm's runtime. It calculates the time and amount of memory needed to execute the algorithm for an input value.
 
 ## O( 1 )
 
@@ -51,7 +50,7 @@ heapq.heapify(nums) # build heap
 # Traverse a square grid
 nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 for i in range(len(nums)):
-    for j in range(len(nums[i])): 
+    for j in range(len(nums[i])):
         print(nums[i][j])
 
 # Get every pair of elements in array
@@ -63,7 +62,7 @@ for i in range(len(nums)):
 # Insertion sort (insert in middle n times -> n^2)
 ```
 
-## O( n * m )
+## O( n \* m )
 
 ```python
 # Get every pair of elements from two arrays
@@ -80,6 +79,7 @@ for i in range(len(nums)):
 ```
 
 ## O( n^3 )
+
 ```python
 # Get every triplet of elements in array
 nums = [1, 2, 3]
@@ -89,7 +89,7 @@ for i in range(len(nums)):
             print(nums[i], nums[j], nums[k])
 ```
 
-## O( logn )
+## O( log n )
 
 ```python
 # Binary search
@@ -114,7 +114,7 @@ def search(root, target):
         return search(root.left, target)
     elif target > root.val:
         return search(root.right, target)
-    else: 
+    else:
         return True
 
 # Heap Push and Pop
@@ -152,7 +152,7 @@ def recursion(i, nums):
 def recursion(i, nums, c):
     if i == len(nums):
         return 0
-    
+
     for j in range(i, i + c):
         branch = recursion(j + 1, nums)
 ```
